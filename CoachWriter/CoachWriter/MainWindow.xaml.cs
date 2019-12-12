@@ -23,12 +23,34 @@ namespace CoachWriter
     /// </summary>
     public partial class MainWindow : Window
     {
+        CoachFile f = default;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            (new WriteToDirectory()).Write((new ReadFromDirectory()).Read());
+            f = (new ReadFromDirectory()).Read();
 
+            grid.ItemsSource = f.Instructions;
+        }
+
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+            (new WriteToDirectory()).Write(f);
+           
+        }
+
+        private void btn_vs_Click(object sender, RoutedEventArgs e)
+        {
+            int index_v = Convert.ToInt32(t_v.Text);
+            int index_s = Convert.ToInt32(t_s.Text);
+            int index_po = Convert.ToInt32(t_po.Text);
+
+            for (int i = index_s; i < index_po + 1; i++)
+            {
+                f.Instructions.Move(i, index_v);
+                index_v++;
+            }
         }
     }
 }
