@@ -10,7 +10,12 @@ namespace CoachWriter.Model.MainObjects
     {
         public int Id { get; set; }
 
-        public List<Instruction> { get; set; }
+        public List<Instruction> Instructions { get; set; }
+
+        public CoachFile()
+        {
+            Instructions = new List<Instruction>();
+        }
 
     }
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CoachWriter.Model.MainObjects;
+using CoachWriter.Model.ReaderObjects;
+using CoachWriter.Model.WriteObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +26,9 @@ namespace CoachWriter
         public MainWindow()
         {
             InitializeComponent();
+
+            (new WriteToDirectory()).Write((new ReadFromDirectory()).Read());
+
         }
     }
 }
