@@ -7,9 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid Name="grid" Margin="0,0,185.286,46.714" />
-        <Button Name="btn" Margin="10,381,645.286,9.714" Content="Новый файл" Click="btn_Click" />
-        <Button Name="btn_vs" Margin="624,381,31.286,9.714" Content="Переместить" Click="btn_vs_Click"  />
+        <DataGrid Name="grid" Margin="0,0,185.286,46.714">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Удалить" Click="btn_vid_Click" ></MenuItem>
+                    <MenuItem Header="Вставить" Click="btn_vstv_Click"></MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Переместить" Click="btn_vs_Click" ></MenuItem>
+                    <MenuItem Header="Сохранить файл" Click="btn_Click"  ></MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
         <TextBox Name="t_v" HorizontalAlignment="Left" Height="23" Margin="660,104,0,0" TextWrapping="Wrap" Text="В" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.531,0.493"/>
         <TextBox Name="t_s" HorizontalAlignment="Left" Height="23" Margin="660,135,0,0" TextWrapping="Wrap" Text="С" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.531,0.493"/>
         <TextBox Name="t_po" HorizontalAlignment="Left" Height="23" Margin="660,170,0,0" TextWrapping="Wrap" Text="По" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.531,0.493"/>

@@ -3,8 +3,10 @@ using CoachWriter.Model.ReaderObjects;
 using CoachWriter.Model.WriteObjects;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,7 +39,10 @@ namespace CoachWriter
         private void btn_Click(object sender, RoutedEventArgs e)
         {
             (new WriteToDirectory()).Write(f);
-           
+
+            Cursor = Cursors.Wait;
+            Thread.Sleep(3000);
+            Cursor = Cursors.Arrow;
         }
 
         private void btn_vs_Click(object sender, RoutedEventArgs e)
@@ -51,6 +56,38 @@ namespace CoachWriter
                 f.Instructions.Move(i, index_v);
                 index_v++;
             }
+        }
+
+        private void btn_vid_Click(object sender, RoutedEventArgs e)
+        {
+            Instruction[] intr = new Instruction[grid.SelectedItems.Count];
+            grid.SelectedItems.CopyTo(intr,0);
+
+            foreach (Instruction w in intr)
+            {
+               f.Instructions.Remove(w);
+            }
+        }
+
+        private void btn_vstv_Click(object sender, RoutedEventArgs e)
+        {
+
+            Instruction instruction = new Instruction()
+            {
+                Id = default,
+                Subject = default,
+                Place = default,
+                Effect = default,
+                Value = default,
+                Unit = default,
+                Instr = default,
+                Group = default,
+                Clast = default
+            };
+
+            f.Instructions.Insert(grid.SelectedIndex + 1, instruction);
+
+            
         }
     }
 }
