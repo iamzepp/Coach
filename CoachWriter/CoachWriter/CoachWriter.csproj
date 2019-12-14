@@ -73,6 +73,7 @@
     <Compile Include="Model\MainObjects\Instruction.cs" />
     <Compile Include="Model\ReaderObjects\IReader.cs" />
     <Compile Include="Model\ReaderObjects\ReadFromDirectory.cs" />
+    <Compile Include="Model\ServiceObjects\ServiceCollectionCreater.cs" />
     <Compile Include="Model\WriteObjects\IWriter.cs" />
     <Compile Include="Model\WriteObjects\WriteToDirectory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

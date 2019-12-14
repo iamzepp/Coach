@@ -7,19 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid Name="grid" Margin="0,0,185.286,46.714">
+        <DataGrid Name="grid" HeadersVisibility="All" LoadingRow="grid_LoadingRow" RowHeaderWidth="45">
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Удалить" Click="btn_vid_Click" ></MenuItem>
                     <MenuItem Header="Вставить" Click="btn_vstv_Click"></MenuItem>
                     <Separator/>
-                    <MenuItem Header="Переместить" Click="btn_vs_Click" ></MenuItem>
-                    <MenuItem Header="Сохранить файл" Click="btn_Click"  ></MenuItem>
+                    <MenuItem Header="Переместить в ячейку">
+                        <TextBox Name="t_v" Text="1" Width="80" TextAlignment="Center" KeyDown="t_v_KeyDown" />
+                    </MenuItem>
+                    <MenuItem Header="Сохранить файл" Click="btn_Click"></MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Заменить Place из файла" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem Header="Создать новую коллекцию" Click="MenuItem1_Click"></MenuItem>
                 </ContextMenu>
             </DataGrid.ContextMenu>
         </DataGrid>
-        <TextBox Name="t_v" HorizontalAlignment="Left" Height="23" Margin="660,104,0,0" TextWrapping="Wrap" Text="В" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.531,0.493"/>
-        <TextBox Name="t_s" HorizontalAlignment="Left" Height="23" Margin="660,135,0,0" TextWrapping="Wrap" Text="С" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.531,0.493"/>
-        <TextBox Name="t_po" HorizontalAlignment="Left" Height="23" Margin="660,170,0,0" TextWrapping="Wrap" Text="По" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.531,0.493"/>
     </Grid>
 </Window>
