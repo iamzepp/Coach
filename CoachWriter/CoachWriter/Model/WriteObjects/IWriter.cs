@@ -9,6 +9,6 @@ namespace CoachWriter.Model.WriteObjects
 {
     interface IWriter
     {
-        void Write(CoachFile File);
+        void Write(CoachFile File, string FileName);
     }
 }

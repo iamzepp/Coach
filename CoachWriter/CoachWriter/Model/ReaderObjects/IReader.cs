@@ -9,6 +9,6 @@ namespace CoachWriter.Model.ReaderObjects
 {
     interface IReader
     {
-        CoachFile Read();
+       CoachFile Read(string FileName);
     }
 }
