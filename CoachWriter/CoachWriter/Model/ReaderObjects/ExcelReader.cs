@@ -85,8 +85,6 @@ namespace CoachWriter.Model.ReaderObjects
                             instruction.Unit = " ";
                         else
                             instruction.Unit = str;
-
-
                     }
                     else
                     {
